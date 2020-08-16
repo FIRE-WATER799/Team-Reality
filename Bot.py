@@ -4,8 +4,9 @@ from discord.ext import commands
 from typing import Union
 
 embed_toggle= os.environ['EMBED_TOGGLE']
+PREFIX= os.environ['PREFIX']
 
-client = commands.Bot(command_prefix=os.environ['PREFIX'], pm_help=True, owner_id=702954010008748174, case_insensitive=True)
+client = commands.Bot(command_prefix=PREFIX, pm_help=True, owner_id=702954010008748174, case_insensitive=True)
 
 client.remove_command("help")
 client._uptime = None
