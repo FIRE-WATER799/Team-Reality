@@ -2,8 +2,8 @@ import discord, os, random, time
 from discord import Embed, Colour, Member, User
 from discord.ext import commands
 from typing import Union
-
-embed_toggle = os.environ['EMBED_TOGGLE']
+os.environ['EMBED_TOGGLE']
+embed_toggle = 1
 PREFIX= "$"
 
 client = commands.Bot(command_prefix="$", pm_help=True, owner_id=702954010008748174, case_insensitive=True)
