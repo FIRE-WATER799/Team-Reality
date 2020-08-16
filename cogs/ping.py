@@ -1,7 +1,5 @@
-import discord
+import discord, time, os
 from discord.ext import commands
-import time 
-import json
 
 embed_toggle= os.environ['EMBED_TOGGLE']
 
