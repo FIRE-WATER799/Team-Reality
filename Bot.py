@@ -49,7 +49,7 @@ async def help(ctx):
     help+="**"   
     if(embed_toggle==0):
       await ctx.send(help)
-    if(embed_toggle==1):
+    if({embed_toggle}==1):
       help_embed=discord.Embed(color=0x0000, title="My Commands", description=help)
       help_embed.set_footer(text="Created by fire#7010") 
       help_embed.set_thumbnail(url='https://image.ibb.co/caM2BK/help.gif')
