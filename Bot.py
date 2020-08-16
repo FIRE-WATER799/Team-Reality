@@ -18,7 +18,7 @@ async def on_connect():
 
 @client.event
 async def on_ready():
-  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="a song"))
+  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="To commands and my coder fire#7010"))
 
 @client.command(usage="Learn how to join a role")
 async def How_do_I_join_Reality(ctx):
