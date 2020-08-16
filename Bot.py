@@ -1,4 +1,4 @@
-import discord, os, random, time, json
+import discord, os, random, time
 from discord import Embed, Colour, Member, User
 from discord.ext import commands
 from typing import Union
