@@ -3,9 +3,9 @@ from discord import Embed, Colour, Member, User
 from discord.ext import commands
 from typing import Union
 
-config = json.load(open('config.json'))
+embed_toggle= os.environ['EMBED_TOGGLE']
 
-client = commands.Bot(command_prefix=config["prefix"], pm_help=True, owner_id=702954010008748174, case_insensitive=True)
+client = commands.Bot(command_prefix=os.environ['PREFIX'], pm_help=True, owner_id=702954010008748174, case_insensitive=True)
 
 client.remove_command("help")
 client._uptime = None
@@ -32,9 +32,9 @@ async def How_do_I_join_Reality(ctx):
   join+="Content Creator: U need atleast 100+ subs to be a content creator \n \n"
   join+="GFX/VFX: U have to make good work and dm staff or owners ur work \n \n"
   join+="And thats how u Join Reality so try to join this clan and be apart with the members in the clan!"
-  if(config["embed_toggle"]==0):
+  if(embed_toggle==0):
     await ctx.send(join)
-  if(config["embed_toggle"]==1):
+  if(embed_toggle==1):
     join_embed=discord.Embed(color=0x0000, title="How to join", description=join)
     join_embed.set_footer(text="Created by fire#7010") 
     await ctx.send(embed=join_embed)
@@ -46,9 +46,9 @@ async def help(ctx):
     for command in client.commands:
         help+=f"{command}- `{command.usage}`\n"
     help+="**"   
-    if(config["embed_toggle"]==0):
+    if(embed_toggle==0):
       await ctx.send(help)
-    if(config["embed_toggle"]==1):
+    if(embed_toggle==1):
       help_embed=discord.Embed(color=0x0000, title="My Commands", description=help)
       help_embed.set_footer(text="Created by fire#7010") 
       help_embed.set_thumbnail(url='https://image.ibb.co/caM2BK/help.gif')
@@ -60,9 +60,9 @@ async def help(ctx):
 async def Congratulations(ctx, *, arg=None):
   if(ctx.message.author.id==699298425124028538):
     if arg == None:
-      if(config["embed_toggle"]==0):
+      if(embed_toggle==0):
         await ctx.send("Error: Please specify who you want to congratulate")
-      if(config["embed_toggle"]==1):
+      if(embed_toggle==1):
         Congratulations_embed_empty = discord.Embed(
           color=0xFF0000
           )
@@ -70,9 +70,9 @@ async def Congratulations(ctx, *, arg=None):
         Congratulations_embed_empty.set_footer(text="Created by fire#7010") 
         await ctx.send(embed=Congratulations_embed_empty)
     else:
-      if(config["embed_toggle"]==0):
+      if(embed_toggle==0):
         await ctx.send(f"{ctx.message.author.name}: Congratulates {arg} for joing the team")
-      if(config["embed_toggle"]==1):
+      if(embed_toggle==1):
         Congratulations_embed_full = discord.Embed(
         color=0x2ECC7
         )
@@ -80,9 +80,9 @@ async def Congratulations(ctx, *, arg=None):
         Congratulations_embed_full.set_footer(text="Created by fire#7010") 
         await ctx.send(embed=Congratulations_embed_full)
   else:
-    if(config["embed_toggle"]==0):
+    if(embed_toggle==0):
       await ctx.send("Error: You do not have permission to do this")
-    if(config["embed_toggle"]==1):
+    if(embed_toggle==1):
       Congratulations_embed_error = discord.Embed(
          color=0xFF0000
          )
@@ -94,4 +94,4 @@ for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
 		
-client.run(os. environ['TOKEN'])
+client.run(os.environ['TOKEN'])
