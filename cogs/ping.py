@@ -24,7 +24,7 @@ class ping(commands.Cog):
         await ctx.send("Ping dose not support non-embeds")
       if(embed_toggle=='1'):
         ping_embed=discord.Embed(color=0x0000, title="Pong", description=ping_content)
-        ping_embed.set_footer(text="Created by fire#7010") 
+        ping_embed.set_footer(text="DM fire#7010 for a custom bot") 
         await message.edit(embed=ping_embed)
         
 def setup(client):
