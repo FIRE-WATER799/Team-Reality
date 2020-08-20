@@ -1,7 +1,8 @@
-import discord, time, os
+import discord, time, os, json
 from discord.ext import commands
 
-embed_toggle= os.environ['EMBED_TOGGLE']
+config = json.load(open('config.json'))
+embed_toggle= config["embed_toggle"]
 
 class ping(commands.Cog):
   
