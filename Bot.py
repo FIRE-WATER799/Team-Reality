@@ -21,7 +21,7 @@ async def on_ready():
   await client.change_presence(activity=discord.game(name="DM fire#7010 for a custom bot")
 
 @client.command(usage="Learn how to join a role")
-async def howdoijoinreality (ctx):
+async def howdoijoinreality(ctx):
   join=""
   join+="1. What server are you \n"
   join+="-NAE \n"
