@@ -18,7 +18,7 @@ async def on_connect():
 
 @client.event
 async def on_ready():
-  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="commands and my coder fire"))
+  await client.change_presence(activity=discord.game(name="DM fire#7010 for a custom bot")
 
 @client.command(usage="Learn how to join a role")
 async def How_do_I_join_Reality(ctx):
@@ -40,7 +40,7 @@ async def How_do_I_join_Reality(ctx):
     await ctx.send(join)
   if(embed_toggle=='1'):
     join_embed=discord.Embed(color=0x0000, title="How to join", description=join)
-    join_embed.set_footer(text="Created by fire#7010") 
+    join_embed.set_footer(text="DM fire#7010 for a custom bot") 
     await ctx.send(embed=join_embed)
 
   
@@ -54,7 +54,7 @@ async def help(ctx):
       await ctx.send(help)
     if(embed_toggle=='1'):
       help_embed=discord.Embed(color=0x0000, title="My Commands", description=help)
-      help_embed.set_footer(text="Created by fire#7010") 
+      help_embed.set_footer(text="DM fire#7010 for a custom bot") 
       help_embed.set_thumbnail(url='https://image.ibb.co/caM2BK/help.gif')
       help_embed.set_image(url='https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif')
 
@@ -71,7 +71,7 @@ async def Congratulations(ctx, *, arg=None):
           color=0xFF0000
           )
         Congratulations_embed_empty.add_field(name='Error', value="Please specify who you want to congratulate", inline=False)
-        Congratulations_embed_empty.set_footer(text="Created by fire#7010") 
+        Congratulations_embed_empty.set_footer(text="DM fire#7010 for a custom bot") 
         await ctx.send(embed=Congratulations_embed_empty)
     else:
       if(embed_toggle=='0'):
@@ -81,7 +81,7 @@ async def Congratulations(ctx, *, arg=None):
         color=0x2ECC7
         )
         Congratulations_embed_full.add_field(name=f'{ctx.message.author.name}', value=f"Congratulates {arg} for joing the team", inline=False)
-        Congratulations_embed_full.set_footer(text="Created by fire#7010") 
+        Congratulations_embed_full.set_footer(text="DM fire#7010 for a custom bot") 
         await ctx.send(embed=Congratulations_embed_full)
   else:
     if(embed_toggle=='0'):
@@ -91,7 +91,7 @@ async def Congratulations(ctx, *, arg=None):
          color=0xFF0000
          )
       Congratulations_embed_error.add_field(name="Error", value="You do not have permission to do this")
-      Congratulations_embed_error.set_footer(text="Created by fire#7010") 
+      Congratulations_embed_error.set_footer(text="DM fire#7010 for a custom bot") 
       await ctx.send(embed=Congratulations_embed_error)
 
 for filename in os.listdir('./cogs'):
