@@ -1,11 +1,12 @@
-import discord, os, random, time
+import discord, os, random, time, json
 from discord import Embed, Colour, Member, User
 from discord.ext import commands
 from typing import Union
 
-embed_toggle = os.environ['EMBED_TOGGLE']
+config = json.load(open('config.json'))
+embed_toggle = config["embed_toggle"]
 
-client = commands.Bot(command_prefix=os.environ['PREFIX'], pm_help=True, owner_id=702954010008748174, case_insensitive=True)
+client = commands.Bot(command_prefix=config["prefix"], pm_help=True, owner_id=702954010008748174, case_insensitive=True)
 
 client.remove_command("help")
 client._uptime = None
@@ -98,4 +99,4 @@ for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
 		
-client.run(os.environ['TOKEN'])
+client.run(config["token"])
